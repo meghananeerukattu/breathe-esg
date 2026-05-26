@@ -17,7 +17,7 @@ function App() {
   const fetchRecords = async () => {
 
     const response = await axios.get(
-      "http://127.0.0.1:8000/api/records/"
+      "https://breathe-esg-backend-vtjo.onrender.com/api/records/"
     );
 
     setRecords(response.data);
@@ -25,7 +25,7 @@ function App() {
   const fetchStats = async () => {
 
   const response = await axios.get(
-    "http://127.0.0.1:8000/api/stats/"
+    "https://breathe-esg-backend-vtjo.onrender.com/api/stats/"
   );
 
   setStats(response.data);
@@ -50,7 +50,7 @@ function App() {
     try {
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/upload/sap/",
+        "https://breathe-esg-backend-vtjo.onrender.com/api/upload/sap/",
         formData
       );
 
@@ -80,7 +80,7 @@ function App() {
   try {
 
     const response = await axios.post(
-      "http://127.0.0.1:8000/api/upload/utility/",
+      "https://breathe-esg-backend-vtjo.onrender.com/api/upload/utility/",
       formData
     );
 
@@ -110,7 +110,7 @@ const handleTravelUpload = async () => {
   try {
 
     const response = await axios.post(
-      "http://127.0.0.1:8000/api/upload/travel/",
+      "https://breathe-esg-backend-vtjo.onrender.com/api/upload/travel/",
       formData
     );
 
@@ -131,7 +131,7 @@ const handleTravelUpload = async () => {
   try {
 
     await axios.post(
-      `http://127.0.0.1:8000/api/records/${id}/status/`,
+      `https://breathe-esg-backend-vtjo.onrender.com/api/records/${id}/status/`,
       {
         status: status
       }

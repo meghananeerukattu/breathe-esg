@@ -27,7 +27,7 @@
             formData.append('file', fileInput.files[0]);
 
             const response = await fetch(
-                'http://127.0.0.1:8000/api/upload/sap/',
+                'https://breathe-esg-backend-vtjo.onrender.com/api/upload/sap/',
                 {
                     method: 'POST',
                     body: formData
