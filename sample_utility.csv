@@ -1,0 +1,4 @@
+meter_id,kwh_used,unit
+M101,450,kwh
+M102,1200,kwh
+M103,-50,kwh

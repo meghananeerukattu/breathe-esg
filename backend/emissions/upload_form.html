@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAP Upload</title>
+</head>
+<body>
+
+    <h1>Upload SAP CSV</h1>
+
+    <form id="uploadForm">
+        <input type="file" id="fileInput" />
+        <button type="submit">Upload</button>
+    </form>
+
+    <pre id="result"></pre>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('fileInput');
+
+            const formData = new FormData();
+
+            formData.append('file', fileInput.files[0]);
+
+            const response = await fetch(
+                'http://127.0.0.1:8000/api/upload/sap/',
+                {
+                    method: 'POST',
+                    body: formData
+                }
+            );
+
+            const data = await response.json();
+
+            document.getElementById('result').innerText =
+                JSON.stringify(data, null, 2);
+        });
+    </script>
+
+</body>
+</html>
